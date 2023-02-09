@@ -1,0 +1,6 @@
+.heading {
+  background: linear-gradient(to bottom right, black, white);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}

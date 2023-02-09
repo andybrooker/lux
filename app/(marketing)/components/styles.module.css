@@ -1,0 +1,80 @@
+.activity {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(to bottom, var(--gold6), var(--gold5)) padding-box,
+    linear-gradient(to bottom, var(--gold4), var(--gold7)) border-box;
+  border-radius: 50em;
+  border: 1.5px solid transparent;
+  right: 8px;
+  bottom: 8px;
+}
+
+.card {
+  --m-x: 50%;
+  --m-y: 50%;
+  --r-x: 10deg;
+  --r-y: -10deg;
+  --bg-x: 50%;
+  --bg-y: 50%;
+  aspect-ratio: 188 / 296;
+  perspective: 600px;
+  --radius: 12px;
+}
+
+.displayCard {
+  display: grid;
+  background-color: var(--slate5);
+  border-radius: var(--radius);
+  border: 1px solid var(--slate7);
+  height: 100%;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  transform-origin: center;
+  transform: rotateY(var(--r-y)) rotateX(var(--r-x));
+  display: grid;
+  transition-property: transform;
+  transition-duration: var(--duration);
+  --opacity: 0;
+  user-select: none;
+}
+
+.displayCard:hover {
+  --opacity: 0.95;
+}
+
+.displayCard > div {
+  clip-path: inset(0 round calc(var(--radius) - 1px));
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-area: 1 / 1;
+}
+
+.glare {
+  background: radial-gradient(
+    farthest-corner circle at var(--m-x) var(--m-y),
+    rgba(255, 255, 255, 0.8) 10%,
+    rgba(255, 255, 255, 0.65) 20%,
+    rgba(255, 255, 255, 0.05) 90%
+  );
+  mix-blend-mode: overlay;
+  opacity: var(--opacity);
+  will-change: background;
+}
+
+.image {
+  height: auto;
+  max-width: 100%;
+}
+
+.noise {
+  background-image: url("/noise.jpeg"), url("/noise.jpeg"), url("/noise.jpeg");
+  background-repeat: repeat;
+  background-size: cover;
+  clip-path: inset(0 0 22% 0 round var(--radius) var(--radius) 0 0) !important;
+  mix-blend-mode: color-dodge;
+  filter: brightness(0.6) contrast(0.9);
+  background-position: center, calc(var(--m-x) * 15) calc(var(--m-y) * 15),
+    calc(var(--m-x) * 15) var(--m-y), bottom left;
+  background-blend-mode: color-burn;
+}

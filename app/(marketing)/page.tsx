@@ -68,7 +68,7 @@ export default function Home() {
           <div className="w-full text-center text-gray-11 text-xs uppercase font-semibold">
             As Featured By
           </div>
-          <div className="flex my-8 gap-8 md:gap-16 justify-around text-gray-11 items-center max-w-5xl mx-auto">
+          <div className="flex flex-col sm:flex-row my-8 gap-8 md:gap-16 justify-around text-gray-11 items-center max-w-5xl mx-auto">
             <Insider />
             <NYT />
             <HFP />
@@ -77,7 +77,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <div className="h-screen w-full">Test</div>
+      <div className="h-screen w-full"></div>
     </>
   );
 }
@@ -130,7 +130,7 @@ function HFP() {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      height="32"
+      height="24"
       viewBox="0 0 923.77 99.46"
       fill="currentColor"
     >

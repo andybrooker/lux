@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <>
       <section className="h-[96%] w-full">
-        <div className="absolute top-0 left-0 right-0 bottom-0 overflow-hidden">
+        <div className="absolute top-0 left-0 right-0 bottom-0 overflow-hidden -z-10">
           <SVGBackgroundPattern />
           <SVGBackgroundPattern />
         </div>
@@ -159,7 +159,7 @@ function Badge({ children }: { children: any }) {
 
 const SVGBackgroundPattern = () => {
   return (
-    <div className="relative w-screen aspect-[1440/1120]">
+    <div className="relative w-screen aspect-[1440/1120] -z-10">
       <div className="absolute top-0 left-0 right-0 -z-10">
         <SvgComponent />
       </div>

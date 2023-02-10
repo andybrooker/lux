@@ -8,6 +8,7 @@ export default function NavContainer({ children }: { children: any }) {
     <motion.header
       className="sticky top-0 z-40 flex items-center justify-center pb-4 px-8"
       style={{
+        WebkitBackdropFilter: backdropFilter,
         backdropFilter,
         height,
         WebkitMask: mask,
@@ -19,7 +20,7 @@ export default function NavContainer({ children }: { children: any }) {
         style={{
           maxWidth: width,
         }}
-        className="relative  container flex items-center justify-between text-sm mx-auto p-2   rounded-full"
+        className="relative  container flex items-center justify-between text-sm mx-auto p-2 rounded-full"
       >
         {children}
       </motion.div>

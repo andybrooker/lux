@@ -5,13 +5,16 @@ type Variant = "large" | "small";
 
 function variants(type: Variant) {
   const sharedProperties =
-    "font-medium bg-gold-8 text-gold-11 rounded-full whitespace-nowrap shadow-sm hover:shadow-md hover:scale-[1.02] transition active:scale-[0.99] focus-visible:outline-gold-10 focus-visible:outline focus-visible:outline-2 ";
+    "font-medium text-gray-1 rounded-full whitespace-nowrap shadow-md hover:shadow-lg hover:scale-[1.02] transition active:scale-[0.99] focus-visible:outline-gold-10 focus-visible:outline focus-visible:outline-2 ";
   switch (type) {
     case "large":
-      return sharedProperties + " px-6 py-3 self-center ";
+      return (
+        sharedProperties +
+        " px-8 py-4 w-48 text-base self-center justify-center "
+      );
 
     default:
-      return sharedProperties + " px-3 py-1 ";
+      return sharedProperties + " px-4 py-2 ";
   }
 }
 

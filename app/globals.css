@@ -57,6 +57,18 @@
   --gray10: hsl(0, 0%, 52.3%);
   --gray11: hsl(0, 0%, 43.5%);
   --gray12: hsl(0, 0%, 9%);
+  --graydark1: hsl(0, 0%, 8.5%);
+  --graydark2: hsl(0, 0%, 11%);
+  --graydark3: hsl(0, 0%, 13.6%);
+  --graydark4: hsl(0, 0%, 15.8%);
+  --graydark5: hsl(0, 0%, 17.9%);
+  --graydark6: hsl(0, 0%, 20.5%);
+  --graydark7: hsl(0, 0%, 24.3%);
+  --graydark8: hsl(0, 0%, 31.2%);
+  --graydark9: hsl(0, 0%, 43.9%);
+  --graydark10: hsl(0, 0%, 49.4%);
+  --graydark11: hsl(0, 0%, 62.8%);
+  --graydark12: hsl(0, 0%, 93%);
   --gold1: hsl(50, 20%, 99.1%);
   --gold2: hsl(47, 52.9%, 96.7%);
   --gold3: hsl(46, 38.2%, 93.7%);
@@ -69,6 +81,18 @@
   --gold10: hsl(36, 19.8%, 45.7%);
   --gold11: hsl(36, 20%, 39%);
   --gold12: hsl(36, 16%, 20%);
+  --golddark1: hsl(44, 9%, 8.3%);
+  --golddark2: hsl(43, 14.3%, 9.6%);
+  --golddark3: hsl(42, 15.5%, 13%);
+  --golddark4: hsl(41, 16.4%, 15.6%);
+  --golddark5: hsl(41, 16.9%, 17.8%);
+  --golddark6: hsl(40, 17.6%, 20.8%);
+  --golddark7: hsl(38, 18.5%, 26.4%);
+  --golddark8: hsl(36, 19.6%, 35.1%);
+  --golddark9: hsl(36, 20%, 49.5%);
+  --golddark10: hsl(36, 22.3%, 54.5%);
+  --golddark11: hsl(35, 30%, 64%);
+  --golddark12: hsl(49, 52%, 93.8%);
 }
 
 @media (prefers-color-scheme: dark) {

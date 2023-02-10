@@ -13,34 +13,37 @@ export default function HomepageLayout({
       <NavContainer>
         <NavContents />
       </NavContainer>
-      <main className="h-full flex-1 mx-auto px-16 w-full">{children}</main>
-      <footer className="p-8  bg-gray-12">
-        <div className="max-w-4xl mx-auto  min-h-[200px]  text-gray-3">
+      <main className="h-full flex-1 mx-auto px-8 md:px-32 w-full">
+        {children}
+      </main>
+      <footer className="p-8  bg-gradient-to-br from-grayDark-2 to-grayDark-1 border-t border-grayDark-7 shadow-inner">
+        <div className="max-w-4xl mx-auto text-gray-2">
           <div className="flex justify-between w-full">
-            <div className="flex flex-col h-[200px] justify-between">
-              <Logo />
-
-              <p className="text-sm text-gray-8 font-semibold">
-                Crafted in London. <br />
-                <span className="text-xs font-light">@andynbrooker</span>
-              </p>
+            <div className="flex gap-16 text-sm">
+              <div className="flex">
+                <p className="text-sm text-gray-9 font-semibold">
+                  <span className="text-gray-2 mr-2">Lux</span> Crafted in
+                  London.
+                </p>
+              </div>
+              <div className="font-semibold">
+                Product
+                <ul className="flex flex-col gap-3 mt-3 font-normal text-gray-9">
+                  <li>Rewards</li>
+                  <li>Travel</li>
+                  <li>Wealth Management</li>
+                </ul>
+              </div>
             </div>
-            <div>
-              Product
-              <ul>
-                <li>Rewards</li>
-                <li>Travel</li>
-                <li>Wealth Management</li>
-              </ul>
-            </div>
-            <div>
-              <div className="flex gap-2 items-center text-gray-8">
+            <div className="flex flex-col gap-2 text-right text-gray-9">
+              <div className="flex gap-2 items-center">
                 <GithubLogo />
                 <span className="text-xs font-medium">MIT License</span>
               </div>
+              <span className="text-xs font-light">@andynbrooker</span>
             </div>
           </div>
-          <div className="text-gray-8 mt-8 text-xs font-light">
+          <div className="text-gray-9 mt-12 text-xs font-light">
             <p className="mb-2">This company does not exist.</p>
             <p>
               Mastercard is a registered trademark and the circles design is a

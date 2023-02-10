@@ -1,51 +1,24 @@
 import { SVGProps } from "react";
 import Card from "./components/Card";
 import CTA from "./components/CTA";
+import * as Tooltip from "@radix-ui/react-tooltip";
+import InfoHover from "./components/InfoHover";
 
 export default function Home() {
   return (
     <>
       <section className="h-[96%] w-full">
-        <div className="absolute top-0 left-0 right-0 -z-10">
-          <SvgComponent />
-          <div className="absolute top-0 left-0 right-0 -z-10">
-            <svg
-              viewBox="0 2 1440 925"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <mask id="path-1-inside-1_1043_3303" fill="white">
-                <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
-                  d="M360 561.987L720 1123L0.000524217 1123L360 561.987ZM1080 561.986L1440 1123L720 1123L1080 561.986ZM1080 561.986L720 0.972656L360 561.987L0 0.972534L1440 0.972647L1080 561.986Z"
-                />
-              </mask>
-              <path
-                d="M0.000524217 1123L-1.68272 1121.92L-3.65923 1125L0.000524556 1125L0.000524217 1123ZM1440 1123L1440 1125L1443.66 1125L1441.68 1121.92L1440 1123ZM720 0.972656L721.683 -0.107475L720 -2.7306L718.317 -0.107475L720 0.972656ZM0 0.972534L1.57313e-07 -1.02747L-3.65975 -1.02747L-1.68325 2.05267L0 0.972534ZM1440 0.972647L1441.68 2.05278L1443.66 -1.02735L1440 -1.02735L1440 0.972647ZM721.683 1121.92L361.683 560.907L358.317 563.067L718.316 1124.08L721.683 1121.92ZM720 1121L0.000523878 1121L0.000524556 1125L720 1125L720 1121ZM1.68377 1124.08L361.683 563.067L358.317 560.907L-1.68272 1121.92L1.68377 1124.08ZM1078.32 563.066L1438.32 1124.08L1441.68 1121.92L1081.68 560.906L1078.32 563.066ZM1440 1121L720 1121L720 1125L1440 1125L1440 1121ZM1078.32 560.906L718.316 1121.92L721.683 1124.08L1081.68 563.066L1078.32 560.906ZM718.317 2.05279L1078.32 563.066L1081.68 560.906L721.683 -0.107475L718.317 2.05279ZM361.683 563.067L721.683 2.05279L718.317 -0.107475L358.317 560.907L361.683 563.067ZM361.683 560.907L1.68325 -0.107597L-1.68325 2.05267L358.317 563.067L361.683 560.907ZM-1.57313e-07 2.97253L1440 2.97265L1440 -1.02735L1.57313e-07 -1.02747L-1.57313e-07 2.97253ZM1438.32 -0.107484L1078.32 560.906L1081.68 563.066L1441.68 2.05278L1438.32 -0.107484Z"
-                fill="url(#paint0_radial_1043_3303)"
-                mask="url(#path-1-inside-1_1043_3303)"
-              />
-              <defs>
-                <radialGradient
-                  id="paint0_radial_1043_3303"
-                  cx="0"
-                  cy="0"
-                  r="1"
-                  gradientUnits="userSpaceOnUse"
-                  gradientTransform="translate(611.735 486.5) rotate(78.2047) scale(530.706 690.766)"
-                >
-                  <stop stop-color="#B8A383" />
-                  <stop offset="1" stop-color="#FCFCFC" stop-opacity="0.19" />
-                </radialGradient>
-              </defs>
-            </svg>
-          </div>
+        <div className="absolute top-0 left-0 right-0 bottom-0 overflow-hidden">
+          <SVGBackgroundPattern />
+          <SVGBackgroundPattern />
         </div>
         <div className="flex flex-col-reverse md:flex-row justify-center items-center mt-8 md:mt-20">
           <div className="flex grow-[2] flex-col gap-4 items-center">
-            <Badge />
-            <h1 className="tracking-tigh text-5xl md:text-6xl lg:text-7xl 2xl:text-8xl font-semibold hero-gradient text-center w-full bg-gradient p-2 text-transparent text-opacity-0 bg-clip-text">
+            <InfoHover>
+              <Badge>Representative 64.0% APR (variable)</Badge>
+            </InfoHover>
+
+            <h1 className="tracking-tight text-5xl md:text-6xl lg:text-7xl 2xl:text-8xl font-semibold hero-gradient text-center w-full bg-gradient p-2 text-transparent text-opacity-0 bg-clip-text">
               One card to
               <br /> rule them all
             </h1>
@@ -54,10 +27,7 @@ export default function Home() {
               insurance and no FX fees.
             </h2>
             <div className="text-sm">
-              {/* <button className="bg-gold-2 text-gold-9 px-6 py-3 border border-solid border-gold-7/60 rounded-full font-medium">
-                Check Eligibility
-              </button> */}
-              <CTA type="large">Check Eligibility</CTA>
+              <CTA type="large">Apply Now</CTA>
             </div>
           </div>
           <div className="flex grow-[1] mb-8 md:mb-0">
@@ -77,7 +47,16 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <div className="h-screen w-full"></div>
+      <div className="w-full flex flex-col justify-center  mt-10 md:mt-16 p-8 md:pt-24 bg-gray-3/30 backdrop-blur-[2px] shadow-xl rounded-t-3xl border border-solid border-gray-7/20">
+        <h2 className="tracking-tight text-3xl md:text-5xl lg:text-[54px] text-center py-2 mb-4 md:mb-8 2xl:text-7xl font-semibold bg-gradient-to-b from-gray-11 to-gray-12 w-full text-transparent text-opacity-0 bg-clip-text">
+          Reimaging the <br /> credit card experience.
+        </h2>
+        <h3 className="text-lg md:text-xl font-base text-center max-w-sm mx-auto">
+          A simple flat fee gets you a card designed to make the most of your
+          most precious assets, time and money.
+        </h3>
+        <div className="h-[560px]"></div>
+      </div>
     </>
   );
 }
@@ -170,19 +149,62 @@ function Verge() {
   );
 }
 
-function Badge() {
+function Badge({ children }: { children: any }) {
   return (
     <div className="text-gold-11 py-1 px-2 rounded-full gradient-border font-medium text-xs backdrop-blur-[1px]">
-      Representative 64.0% APR (variable)
+      {children}
     </div>
   );
 }
+
+const SVGBackgroundPattern = () => {
+  return (
+    <div className="relative w-screen aspect-[1440/1120]">
+      <div className="absolute top-0 left-0 right-0 -z-10">
+        <SvgComponent />
+      </div>
+      <div className="absolute top-0 left-0 right-0 -z-10">
+        <svg
+          viewBox="0 2 1440 1120"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <mask id="path-1-inside-1_1043_3303" fill="white">
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M360 561.987L720 1123L0.000524217 1123L360 561.987ZM1080 561.986L1440 1123L720 1123L1080 561.986ZM1080 561.986L720 0.972656L360 561.987L0 0.972534L1440 0.972647L1080 561.986Z"
+            />
+          </mask>
+          <path
+            d="M0.000524217 1123L-1.68272 1121.92L-3.65923 1125L0.000524556 1125L0.000524217 1123ZM1440 1123L1440 1125L1443.66 1125L1441.68 1121.92L1440 1123ZM720 0.972656L721.683 -0.107475L720 -2.7306L718.317 -0.107475L720 0.972656ZM0 0.972534L1.57313e-07 -1.02747L-3.65975 -1.02747L-1.68325 2.05267L0 0.972534ZM1440 0.972647L1441.68 2.05278L1443.66 -1.02735L1440 -1.02735L1440 0.972647ZM721.683 1121.92L361.683 560.907L358.317 563.067L718.316 1124.08L721.683 1121.92ZM720 1121L0.000523878 1121L0.000524556 1125L720 1125L720 1121ZM1.68377 1124.08L361.683 563.067L358.317 560.907L-1.68272 1121.92L1.68377 1124.08ZM1078.32 563.066L1438.32 1124.08L1441.68 1121.92L1081.68 560.906L1078.32 563.066ZM1440 1121L720 1121L720 1125L1440 1125L1440 1121ZM1078.32 560.906L718.316 1121.92L721.683 1124.08L1081.68 563.066L1078.32 560.906ZM718.317 2.05279L1078.32 563.066L1081.68 560.906L721.683 -0.107475L718.317 2.05279ZM361.683 563.067L721.683 2.05279L718.317 -0.107475L358.317 560.907L361.683 563.067ZM361.683 560.907L1.68325 -0.107597L-1.68325 2.05267L358.317 563.067L361.683 560.907ZM-1.57313e-07 2.97253L1440 2.97265L1440 -1.02735L1.57313e-07 -1.02747L-1.57313e-07 2.97253ZM1438.32 -0.107484L1078.32 560.906L1081.68 563.066L1441.68 2.05278L1438.32 -0.107484Z"
+            fill="url(#paint0_radial_1043_3303)"
+            mask="url(#path-1-inside-1_1043_3303)"
+          />
+          <defs>
+            <radialGradient
+              id="paint0_radial_1043_3303"
+              cx="0"
+              cy="0"
+              r="1"
+              gradientUnits="userSpaceOnUse"
+              gradientTransform="translate(611.735 486.5) rotate(78.2047) scale(530.706 690.766)"
+            >
+              <stop stop-color="#B8A383" />
+              <stop offset="1" stop-color="#FCFCFC" stop-opacity="0.19" />
+            </radialGradient>
+          </defs>
+        </svg>
+      </div>
+    </div>
+  );
+};
 
 const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     xmlnsXlink="http://www.w3.org/1999/xlink"
-    viewBox="0 2 1440 925"
+    viewBox="0 2 1440 1120"
     {...props}
   >
     <defs>

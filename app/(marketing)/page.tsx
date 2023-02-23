@@ -3,15 +3,16 @@ import Card from "./components/Card";
 import CTA from "./components/CTA";
 import * as Tooltip from "@radix-ui/react-tooltip";
 import InfoHover from "./components/InfoHover";
+import OverviewSection from "./sections/Overview";
 
 export default function Home() {
   return (
     <>
+      <div className="absolute top-0 left-0 right-0 bottom-0 overflow-hidden -z-10">
+        <SVGBackgroundPattern />
+        <SVGBackgroundPattern />
+      </div>
       <section className="h-[96%] w-full">
-        <div className="absolute top-0 left-0 right-0 bottom-0 overflow-hidden -z-10">
-          <SVGBackgroundPattern />
-          <SVGBackgroundPattern />
-        </div>
         <div className="flex flex-col-reverse md:flex-row justify-center items-center mt-8 md:mt-20">
           <div className="flex grow-[2] flex-col gap-4 items-center">
             <InfoHover>
@@ -38,7 +39,7 @@ export default function Home() {
           <div className="w-full text-center text-gray-11 text-xs uppercase font-semibold">
             As Featured By
           </div>
-          <div className="flex flex-col sm:flex-row my-8 gap-8 md:gap-16 justify-around text-gray-11 items-center max-w-5xl mx-auto">
+          <div className="flex flex-col sm:flex-row my-12 gap-8 md:gap-16 justify-around text-gray-11 items-center max-w-5xl mx-auto">
             <Insider />
             <NYT />
             <HFP />
@@ -47,16 +48,8 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <div className="w-full flex flex-col justify-center  mt-10 md:mt-16 p-8 md:pt-24 bg-gray-3/30 backdrop-blur-[2px] shadow-xl rounded-t-3xl border border-solid border-gray-7/20">
-        <h2 className="tracking-tight text-3xl md:text-5xl lg:text-[54px] text-center py-2 mb-4 md:mb-8 2xl:text-7xl font-semibold bg-gradient-to-b from-gray-11 to-gray-12 w-full text-transparent text-opacity-0 bg-clip-text">
-          Reimaging the <br /> credit card experience.
-        </h2>
-        <h3 className="text-lg md:text-xl font-base text-center max-w-sm mx-auto">
-          A simple flat fee gets you a card designed to make the most of your
-          most precious assets, time and money.
-        </h3>
-        <div className="h-[560px]"></div>
-      </div>
+      <OverviewSection />
+      <section className="h-[96px] bg-gray-12 w-full"></section>
     </>
   );
 }

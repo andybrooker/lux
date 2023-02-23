@@ -1,4 +1,5 @@
 import resolveConfig from "tailwindcss/resolveConfig"
-import tailwindConfig from "@/tailwind.config.js"
+import {content, theme} from "@/tailwind.config.js"
 
-export const fullConfig = resolveConfig(tailwindConfig)
+export const fullConfig = resolveConfig({content, theme})
+

@@ -13,11 +13,11 @@ export default function HomepageLayout({
       <NavContainer>
         <NavContents />
       </NavContainer>
-      <main className="h-full flex-1 mx-auto px-8 md:px-32 w-full">
+      <main className="h-full flex-1 mx-auto px-8 lg:px-20 xl:px-32 w-full">
         {children}
       </main>
-      <footer className="p-8  bg-gradient-to-br from-grayDark-2 to-grayDark-1 border-t border-grayDark-7 shadow-inner">
-        <div className="max-w-4xl mx-auto text-gray-2">
+      <footer className="p-8  bg-gradient-to-br from-grayDark-2 to-grayDark-1 border-t border-grayDark-7 shadow-inner z-10">
+        <div className="max-w-5xl mx-auto text-gray-2">
           <div className="flex justify-between w-full">
             <div className="flex gap-16 text-sm">
               <div className="flex">

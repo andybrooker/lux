@@ -22,7 +22,7 @@ export default function Nav() {
         </ul>
       </nav>
       <div className="flex items-center gap-4">
-        <CTA type="small">Check Eligibility</CTA>
+        <CTA type="small">Apply Now</CTA>
         <MenuIcon />
       </div>
     </>

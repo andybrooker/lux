@@ -20,9 +20,8 @@ const container: Variants = {
 };
 
 const headingContainer: Variants = {
-  offScreen: { boxShadow: boxShadow["none"], scale: 0.97 },
+  offScreen: { scale: 0.97 },
   onScreen: {
-    boxShadow: boxShadow["2xl"],
     scale: 1,
     transition: {
       when: "beforeChildren",
@@ -74,7 +73,7 @@ export default function OverviewSection() {
       whileInView="onScreen"
       variants={headingContainer}
       viewport={{ once: true }}
-      className="w-full text-gray-12 flex flex-col justify-center  mt-10 md:mt-16 p-8 md:pt-16 bg-gray-3/30 backdrop-blur-[2px] shadow-xl shadow-gold-8/70 rounded-t-3xl border border-solid border-gray-7/30"
+      className="w-full text-gray-12 flex flex-col justify-center mt-16 md:p-8 md:pt-16"
     >
       <motion.div
         variants={item}
@@ -89,18 +88,16 @@ export default function OverviewSection() {
           <br />
         </h2>
         <h3 className="text-center text-2xl font-medium bg-gradient-to-r from-gray-11 via-gray-8 to-gray-10 text-transparent text-opacity-0 bg-clip-text">
-          {" "}
           It&apos;s time to reimagine the credit card experience.
         </h3>
-        <div className="h-[1px] w-full bg-gradient-to-r from-gray-1/0 via-gray-7 to-gray-1/0 my-8 md:mt-12"></div>
       </motion.div>
       <motion.div
         variants={container}
         viewport={{ once: true }}
-        className="flex flex-col md:flex-row gap-4"
+        className="flex flex-col md:flex-row gap-4 my-6"
       >
         {copy.map(({ mainCopy, supportingCopy }) => (
-          <motion.div variants={item} key={mainCopy}>
+          <motion.div className="flex-1" variants={item} key={mainCopy}>
             <OverviewSectionInfo
               mainCopy={mainCopy}
               supportingCopy={supportingCopy}
@@ -108,11 +105,7 @@ export default function OverviewSection() {
           </motion.div>
         ))}
       </motion.div>
-      <motion.div
-        className="mt-2"
-        variants={pictureItem}
-        viewport={{ once: true }}
-      >
+      <motion.div variants={pictureItem} viewport={{ once: true }}>
         <Image
           src={preview}
           alt="A product demo, showing the Lux credit card, the home screen of the phone app and the web app home page. The top half of the phone screen shows the card and its details such as the card number. You can see your credit card balance as well as when the payment is due, with a scrollable list of all your transactions."
@@ -143,7 +136,7 @@ function DisplayCard({ children }: { children: any }) {
 
 function DisplayCardMainCopy({ children }: { children: any }) {
   return (
-    <div className="font-semibold text-sm md:text-base lg:text-lg text-gray-12">
+    <div className="font-semibold text-sm md:text-base text-gray-12">
       {children}
     </div>
   );

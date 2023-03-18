@@ -4,11 +4,15 @@ import CTA from "./components/CTA";
 import * as Tooltip from "@radix-ui/react-tooltip";
 import InfoHover from "./components/InfoHover";
 import OverviewSection from "./sections/Overview";
+import { motion } from "framer-motion";
+import Slider from "./components/Slider";
 
 export default function Home() {
   return (
     <>
       <div className="absolute top-0 left-0 right-0 bottom-0 overflow-hidden -z-10">
+        <SVGBackgroundPattern />
+        <SVGBackgroundPattern />
         <SVGBackgroundPattern />
         <SVGBackgroundPattern />
       </div>
@@ -49,8 +53,42 @@ export default function Home() {
         </div>
       </section>
       <OverviewSection />
-      <section className="h-[96px] bg-gray-12 w-full"></section>
+      <FeatureSection badge="Rewards" copy="Cash back or rewards. Your choice.">
+        <Slider />
+      </FeatureSection>
+      <FeatureSection
+        badge="Travel"
+        copy="Travel in style, with all-inclusive peace of mind."
+      ></FeatureSection>
+      <FeatureSection
+        badge="Member Spaces"
+        copy="Exclusive spaces in your neighbourhood."
+      ></FeatureSection>
+      <FeatureSection
+        badge="Wealth Management"
+        copy="Your financials. Supported."
+      ></FeatureSection>
     </>
+  );
+}
+
+type FeatureSectionProps = {
+  badge: string;
+  copy: string;
+  children?: React.ReactNode;
+};
+
+function FeatureSection({ badge, copy, children }: FeatureSectionProps) {
+  return (
+    <section className="h-[96%] w-full md:p-8 my-20">
+      <div className="flex grow-[2] flex-col gap-4 items-center">
+        <Badge>{badge}</Badge>
+        <h2 className="tracking-tight text-4xl md:text-5xl font-semibold bg-gradient-to-b from-gray-11 via-gray-12 to-gray-11 text-center w-full p-2 text-transparent text-opacity-0 bg-clip-text">
+          {copy}
+        </h2>
+      </div>
+      <div>{children}</div>
+    </section>
   );
 }
 

@@ -2,7 +2,7 @@
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 
 export default function NavContainer({ children }: { children: any }) {
-  const { mask, background, backdropFilter, height, width } = useScrollStyle();
+  const { mask, background, backdropFilter, height } = useScrollStyle();
 
   return (
     <motion.header
@@ -18,7 +18,7 @@ export default function NavContainer({ children }: { children: any }) {
       <motion.div
         layout
         style={{
-          maxWidth: width,
+          maxWidth: 1048,
         }}
         className="relative  container flex items-center justify-between text-sm mx-auto p-2 rounded-full"
       >
@@ -33,10 +33,6 @@ const useScrollStyle = () => {
   const springScrollY = useSpring(scrollY, { stiffness: 90, damping: 20 });
   const scrollInputRange = [0, 100];
 
-  const width = useTransform(springScrollY, scrollInputRange, [
-    "1048px",
-    "896px",
-  ]);
   const height = useTransform(springScrollY, scrollInputRange, [
     "96px",
     "72px",
@@ -57,5 +53,5 @@ const useScrollStyle = () => {
     "linear-gradient(black 66%, transparent)",
   ]);
 
-  return { mask, background, backdropFilter, height, width };
+  return { mask, background, backdropFilter, height };
 };

@@ -1,32 +1,22 @@
 import { SVGProps } from "react";
-import Card from "./components/Card";
-import CTA from "./components/CTA";
-import * as Tooltip from "@radix-ui/react-tooltip";
-import InfoHover from "./components/InfoHover";
+import CreditCard from "./components/CreditCard";
+import Card from "./components/Card/Card";
 import OverviewSection from "./sections/Overview";
-import { motion } from "framer-motion";
-import Slider from "./components/Slider";
-import Animate from "./components/Animate";
 import Hero from "./components/Hero";
 import Badge from "./components/Badge";
 import Press from "./components/Press";
+import CardGroup from "./components/Card/CardGroup";
 
 export default function Home() {
   return (
     <>
-      <div className="absolute top-0 left-0 right-0 bottom-0 overflow-hidden -z-10">
-        <SVGBackgroundPattern />
-        <SVGBackgroundPattern />
-        <SVGBackgroundPattern />
-        <SVGBackgroundPattern />
-      </div>
       <HeroSection />
       <OverviewSection />
       <RewardsSection badge="Rewards" copy="Cash back or rewards. Your choice.">
-        Test
+        <CardGroup />
         {/* <Slider /> */}
       </RewardsSection>
-      <FeatureSection
+      {/* <FeatureSection
         badge="Travel"
         copy="Travel in style, with all-inclusive peace of mind."
       ></FeatureSection>
@@ -37,7 +27,7 @@ export default function Home() {
       <FeatureSection
         badge="Wealth Management"
         copy="Your financials. Supported."
-      ></FeatureSection>
+      ></FeatureSection> */}
     </>
   );
 }
@@ -54,7 +44,7 @@ function HeroSection() {
       <div className="flex flex-col-reverse md:flex-row justify-center items-center mt-8 md:mt-20">
         <Hero />
         <div className="flex grow-[1] mb-8 md:mb-0">
-          <Card />
+          <CreditCard />
         </div>
       </div>
       <Press>
@@ -84,10 +74,10 @@ function FeatureSection({ badge, copy, children }: FeatureSectionProps) {
 
 function RewardsSection({ badge, copy, children }: FeatureSectionProps) {
   return (
-    <section className="h-[96%] w-full md:p-8 md:py-24 my-20 bg-gradient-to-br from-grayDark-5 to-black">
+    <section className="h-[96%] w-full py-8 md:p-8 md:py-24 my-20 bg-gradient-to-br from-grayDark-5 to-black">
       <div className="flex grow-[2] flex-col gap-4 items-center">
         <Badge dark>{badge}</Badge>
-        <h2 className="tracking-tight text-4xl md:text-5xl font-semibold bg-gradient-to-br from-grayDark-11 via-grayDark-12 to-grayDark-10 text-center w-full p-2 text-transparent text-opacity-0 bg-clip-text">
+        <h2 className="tracking-tight text-2xl min-[480px]:text-3xl sm:text-4xl md:text-5xl font-semibold bg-gradient-to-br from-grayDark-11 via-grayDark-12 to-grayDark-10 text-center w-full p-2 text-transparent text-opacity-0 bg-clip-text">
           {copy}
         </h2>
       </div>

@@ -19,13 +19,13 @@ const TooltipDemo = ({ children }: { children: any }) => {
             <span>
               The Representative APR, or Annual Percentage Rate, is an interest
               rate that is advertised by lenders (us!) to give you an idea of
-              what you might pay in interest on our credit card. It's designed
-              to be a helpful guide to help you understand the costs of
+              what you might pay in interest on our credit card. It&apos;s
+              designed to be a helpful guide to help you understand the costs of
               borrowing. <br />
-              <br /> It's important to keep in mind that the Representative APR
-              is just an estimate and your actual interest rate may be different
-              based on factors such as your credit history, income, and other
-              personal circumstances.
+              <br /> It&apos;s important to keep in mind that the Representative
+              APR is just an estimate and your actual interest rate may be
+              different based on factors such as your credit history, income,
+              and other personal circumstances.
             </span>
           </Tooltip.Content>
         </Tooltip.Portal>

@@ -36,7 +36,7 @@ const item: Variants = {
   onScreen: {
     opacity: 1,
     translateY: 0,
-    transition: { duration: 0.9 },
+    transition: { duration: 0.6 },
   },
 };
 

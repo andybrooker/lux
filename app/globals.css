@@ -182,4 +182,17 @@ a {
       linear-gradient(to right, var(--gold12), var(--gold8)) border-box;
     border: 1px solid transparent;
   }
+  .dark-gradient-border-reverse {
+    background: linear-gradient(to bottom, var(--graydark2), var(--graydark2))
+        padding-box,
+      linear-gradient(to left, var(--gold12), var(--gold8)) border-box;
+    border: 1px solid transparent;
+  }
+  .dark-gradient-border-centre {
+    background: linear-gradient(to bottom, var(--graydark2), var(--graydark2))
+        padding-box,
+      linear-gradient(to left, var(--gold8), var(--gold7), var(--gold8))
+        border-box;
+    border: 1px solid transparent;
+  }
 }

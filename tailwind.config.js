@@ -59,12 +59,12 @@ module.exports = {
       },
       boxShadow: {
         slider: `
-        0px 0px 0px 0.5px rgba(0, 0, 0, 0.02), 
-        0px 8px 3px rgba(58, 58, 39, 0.01), 
-        0px 5px 3px rgba(58, 58, 39, 0.05), 
-        0px 2px 2px rgba(58, 58, 39, 0.09), 
-        0px 1px 1px rgba(58, 58, 39, 0.1), 
-        0px 0px 0px rgba(58, 58, 39, 0.1),
+        0px 15px 4px rgba(0, 0, 0, 0.01), 
+        0px 9px 4px rgba(0, 0, 0, 0.07), 
+        0px 5px 3px rgba(0, 0, 0, 0.25), 
+        0px 2px 2px rgba(0, 0, 0, 0.43), 
+        0px 1px 1px rgba(0, 0, 0, 0.49), 
+        0px 0px 0px rgba(0, 0, 0, 0.5),
         inset 0px 0px 2px 1px #FFFFFF, 
         inset 0px 1px 0px #FFFFFF;`,
         track: ` 
@@ -77,6 +77,13 @@ module.exports = {
       },
       textShadow: {
         normal: `0 0 1px 0 rgba(0,0,0,0.25)`,
+      },
+      dropShadow: {
+        glow: [
+          "0px 0px 4.186px #242424",
+          "0px 0px 1.196px #242424",
+          "0px 0px 0.598px #242424",
+        ],
       },
     },
   },

@@ -17,11 +17,6 @@ export default function Slider() {
     [-300, -150, 0, 150, 300],
     [1, 0, 0, 0, 1]
   );
-  const background = useTransform(
-    x,
-    [-300, 0, 300],
-    ["hsl(0, 0%, 13.6%)", "hsl(0, 0%, 95.1%)", "hsl(0, 0%, 13.6%)"]
-  );
 
   const [value, setValue] = useState("");
 
@@ -34,38 +29,30 @@ export default function Slider() {
   });
 
   return (
-    <motion.div
-      style={{ backgroundColor: background }}
-      className="h-10 md:h-20 w-full rounded-full p-1 md:p-2 box-border my-4 shadow-track relative"
-    >
+    <motion.div className="drop-shadow-glow h-12 w-full rounded-full bg-grayDark-4 p-1 box-border my-4 relative z-50 shadow-[0_1px_0_3px_#00000040,0_0_0_3px_#B8A38380,inset_0_0_8px_0_#00000080]">
       <motion.div
         ref={constraintsRef}
-        className="w-full h-full flex items-center justify-center"
+        className="w-full h-full flex items-center justify-center relative"
       >
         <motion.span
           style={{ opacity }}
-          className="absolute left-4 md:left-8 text-xs md:text-base text-gray-11 [text-shadow:0_0_1px_rgba(0,0,0,0.25)]"
+          className="absolute left-4 text-xs  text-gray-11 [text-shadow:0_0_1px_rgba(0,0,0,0.25)]"
         >
-          Cash back
+          £133
         </motion.span>
         <motion.span
           style={{ opacity: inverseOpacity }}
-          className="absolute right-4 md:right-8 text-xs md:text-base text-gray-11 [text-shadow:0_0_1px_rgba(0,0,0,0.25)]"
+          className="absolute right-4 text-xs  text-gray-11 [text-shadow:0_0_1px_rgba(0,0,0,0.25)]"
         >
-          Rewards
+          500 Points
         </motion.span>
-        <motion.span
-          style={{ opacity: rewardOpacity }}
-          className="[text-shadow:0_0_1px_rgba(0,0,0,0.25)] font-medium text-xs md:text-base text-grayDark-12"
-        >
-          {value}
-        </motion.span>
+
         <motion.div
           style={{ x: x }}
           drag="x"
           dragConstraints={constraintsRef}
           dragElastic={0}
-          className="aspect-square cursor-grab active:cursor-grabbing w-8 md:w-16 bg-white bg-gradient-to-b from-white via-white to-black/[0.08] rounded-full absolute left-1/2 -ml-4 md:-ml-8 shadow-slider"
+          className="aspect-square z-[9999] cursor-grab active:cursor-grabbing h-full bg-white bg-gradient-to-b from-white via-white to-black/[0.4] rounded-full absolute left-1/2 -ml-6 shadow-slider"
         ></motion.div>
       </motion.div>
     </motion.div>

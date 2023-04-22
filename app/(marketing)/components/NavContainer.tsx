@@ -45,7 +45,7 @@ const useScrollStyle = () => {
 
   const background = useTransform(springScrollY, scrollInputRange, [
     "linear-gradient(rgb(219, 219, 219 / 0.0), rgb(219, 219, 219 / 0.0)",
-    "linear-gradient(rgb(219, 219, 219 / 0.3), rgb(219, 219, 219 / 0.0)",
+    "linear-gradient(rgb(219, 219, 219 / 0.5), rgb(219, 219, 219 / 0.0)",
   ]);
 
   const mask = useTransform(springScrollY, scrollInputRange, [

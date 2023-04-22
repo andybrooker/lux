@@ -52,27 +52,36 @@ export default function Card() {
 
   return (
     <motion.div
-      onPointerMove={handleMove}
-      onPointerLeave={handleLeave}
-      ref={ref}
-      className={"h-72 md:h-[360px] " + styles.card}
-      animate={
-        { "--r-x": mousePos.ry + "deg", "--r-y": -mousePos.rx + "deg" } as any
-      }
-      style={
-        {
-          "--m-x": mousePos.mx + "%",
-          "--m-y": mousePos.my + "%",
-        } as CSSProperties
-      }
+      initial={{ opacity: 0, y: 5, scale: 0.95, filter: "blur(5px)" }}
+      animate={{ scale: 1, opacity: 1, y: 0, filter: "blur(0px)" }}
+      transition={{ delay: 0.3, duration: 0.9 }}
     >
-      <div className={"shadow-2xl " + styles.displayCard}>
-        <div>
-          <Image className={styles.image} src={card} alt="Credit Card" />
+      <motion.div
+        onPointerMove={handleMove}
+        onPointerLeave={handleLeave}
+        ref={ref}
+        className={"h-72 md:h-[360px] " + styles.card}
+        animate={
+          {
+            "--r-x": mousePos.ry + "deg",
+            "--r-y": -mousePos.rx + "deg",
+          } as any
+        }
+        style={
+          {
+            "--m-x": mousePos.mx + "%",
+            "--m-y": mousePos.my + "%",
+          } as CSSProperties
+        }
+      >
+        <div className={"shadow-2xl " + styles.displayCard}>
+          <div>
+            <Image className={styles.image} src={card} alt="Credit Card" />
+          </div>
+          <div className={styles.noise}></div>
+          <div className={styles.glare}></div>
         </div>
-        <div className={styles.noise}></div>
-        <div className={styles.glare}></div>
-      </div>
+      </motion.div>
     </motion.div>
   );
 }

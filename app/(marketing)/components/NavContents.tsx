@@ -1,11 +1,26 @@
+"use client";
+
 import CTA from "./CTA";
 import Logo from "./Logo";
+import { motion } from "framer-motion";
 
 export default function Nav() {
   return (
     <>
-      <Logo />
-      <nav className="hidden sm:block">
+      <motion.div
+        initial={{ opacity: 0, y: 5, filter: "blur(5px)" }}
+        animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
+        transition={{ duration: 0.8 }}
+      >
+        <Logo />
+      </motion.div>
+
+      <motion.nav
+        initial={{ opacity: 0, y: 5, filter: "blur(5px)" }}
+        animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
+        transition={{ duration: 0.8 }}
+        className="hidden sm:block"
+      >
         <ul className="flex gap-6 font-semibold">
           <li>
             <a>Rewards</a>
@@ -20,11 +35,16 @@ export default function Nav() {
             <a>Company</a>
           </li>
         </ul>
-      </nav>
-      <div className="flex items-center gap-4">
+      </motion.nav>
+      <motion.div
+        initial={{ opacity: 0, y: 5, filter: "blur(5px)" }}
+        animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
+        transition={{ duration: 0.8 }}
+        className="flex items-center gap-4"
+      >
         <CTA type="small">Apply Now</CTA>
         <MenuIcon />
-      </div>
+      </motion.div>
     </>
   );
 }

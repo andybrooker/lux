@@ -73,7 +73,7 @@ export default function OverviewSection() {
       whileInView="onScreen"
       variants={headingContainer}
       viewport={{ once: true }}
-      className="w-full text-gray-12 flex flex-col justify-center mt-16 md:p-8 md:pt-16"
+      className="w-full text-gray-12 flex flex-col justify-center md:p-8 md:pt-16 px-8 lg:px-20 xl:px-32"
     >
       <motion.div
         variants={item}

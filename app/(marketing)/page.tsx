@@ -6,6 +6,10 @@ import InfoHover from "./components/InfoHover";
 import OverviewSection from "./sections/Overview";
 import { motion } from "framer-motion";
 import Slider from "./components/Slider";
+import Animate from "./components/Animate";
+import Hero from "./components/Hero";
+import Badge from "./components/Badge";
+import Press from "./components/Press";
 
 export default function Home() {
   return (
@@ -16,46 +20,12 @@ export default function Home() {
         <SVGBackgroundPattern />
         <SVGBackgroundPattern />
       </div>
-      <section className="h-[96%] w-full">
-        <div className="flex flex-col-reverse md:flex-row justify-center items-center mt-8 md:mt-20">
-          <div className="flex grow-[2] flex-col gap-4 items-center">
-            <InfoHover>
-              <Badge>Representative 64.0% APR (variable)</Badge>
-            </InfoHover>
-
-            <h1 className="tracking-tight text-5xl md:text-6xl lg:text-7xl 2xl:text-8xl font-semibold hero-gradient text-center w-full bg-gradient p-2 text-transparent text-opacity-0 bg-clip-text">
-              One card to
-              <br /> rule them all
-            </h1>
-            <h2 className="text-center md:text-xl mb-8">
-              Luxury rewards, personal wealth advice, <br /> worldwide travel
-              insurance and no FX fees.
-            </h2>
-            <div className="text-sm">
-              <CTA type="large">Apply Now</CTA>
-            </div>
-          </div>
-          <div className="flex grow-[1] mb-8 md:mb-0">
-            <Card />
-          </div>
-        </div>
-        <div className="mt-8 md:mt-24">
-          <div className="w-full text-center text-gray-11 text-xs uppercase font-semibold">
-            As Featured By
-          </div>
-          <div className="flex flex-col sm:flex-row my-12 gap-8 md:gap-16 justify-around text-gray-11 items-center max-w-5xl mx-auto">
-            <Insider />
-            <NYT />
-            <HFP />
-            <Verge />
-            <BBC />
-          </div>
-        </div>
-      </section>
+      <HeroSection />
       <OverviewSection />
-      <FeatureSection badge="Rewards" copy="Cash back or rewards. Your choice.">
-        <Slider />
-      </FeatureSection>
+      <RewardsSection badge="Rewards" copy="Cash back or rewards. Your choice.">
+        Test
+        {/* <Slider /> */}
+      </RewardsSection>
       <FeatureSection
         badge="Travel"
         copy="Travel in style, with all-inclusive peace of mind."
@@ -78,9 +48,29 @@ type FeatureSectionProps = {
   children?: React.ReactNode;
 };
 
+function HeroSection() {
+  return (
+    <section className="px-8 lg:px-20 xl:px-32 mb-32 h-[96%] w-full">
+      <div className="flex flex-col-reverse md:flex-row justify-center items-center mt-8 md:mt-20">
+        <Hero />
+        <div className="flex grow-[1] mb-8 md:mb-0">
+          <Card />
+        </div>
+      </div>
+      <Press>
+        <Insider />
+        <NYT />
+        <HFP />
+        <Verge />
+        <BBC />
+      </Press>
+    </section>
+  );
+}
+
 function FeatureSection({ badge, copy, children }: FeatureSectionProps) {
   return (
-    <section className="h-[96%] w-full md:p-8 my-20">
+    <section className="h-[96%] w-full md:p-8 my-20 bg-black">
       <div className="flex grow-[2] flex-col gap-4 items-center">
         <Badge>{badge}</Badge>
         <h2 className="tracking-tight text-4xl md:text-5xl font-semibold bg-gradient-to-b from-gray-11 via-gray-12 to-gray-11 text-center w-full p-2 text-transparent text-opacity-0 bg-clip-text">
@@ -88,6 +78,20 @@ function FeatureSection({ badge, copy, children }: FeatureSectionProps) {
         </h2>
       </div>
       <div>{children}</div>
+    </section>
+  );
+}
+
+function RewardsSection({ badge, copy, children }: FeatureSectionProps) {
+  return (
+    <section className="h-[96%] w-full md:p-8 md:py-24 my-20 bg-gradient-to-br from-grayDark-5 to-black">
+      <div className="flex grow-[2] flex-col gap-4 items-center">
+        <Badge dark>{badge}</Badge>
+        <h2 className="tracking-tight text-4xl md:text-5xl font-semibold bg-gradient-to-br from-grayDark-11 via-grayDark-12 to-grayDark-10 text-center w-full p-2 text-transparent text-opacity-0 bg-clip-text">
+          {copy}
+        </h2>
+      </div>
+      <div className="px-8 lg:px-20 xl:px-32">{children}</div>
     </section>
   );
 }
@@ -177,14 +181,6 @@ function Verge() {
     >
       <path d="m231.196 17.897-.302 9.071c-10.592-.726-13.618 1.996-13.618 10.885V39h-9.078V18.441h9.078v5.866c2.724-4.777 6.416-6.954 13.92-6.41ZM15.131 54.786h9.078V19.71h-9.078v35.075Zm44.968-36.828c-6.355 0-10.228 2.842-12.286 5.986V4.593H0v8.466h39.34V39h8.654c0-7.438 4.298-12.697 9.563-12.697 4.54 0 6.597 2.237 6.597 10.28v18.203h9.078V33.318c0-10.28-5.265-15.36-13.133-15.36ZM95.807 47.83c-5.507 0-9.078-3.326-9.683-8.829H77.59c.847 9.676 7.202 16.51 18.157 16.51 8.473 0 13.254-3.81 15.736-9.555l-7.687-3.387c-1.15 3.447-3.268 5.261-7.989 5.261Zm-.363-29.692a19.226 19.226 0 0 0-9.32 2.177l4.357 6.168c1.634-.846 3.39-1.27 5.266-1.21 5.084 0 7.686 3.327 8.049 7.68H95.02v6.048h17.31c.121-.907.182-1.754.182-2.66.06-13.184-8.655-18.203-17.068-18.203ZM185.32 47.83c-5.507 0-9.078-3.326-9.683-8.829h-8.534c.847 9.676 7.202 16.51 18.157 16.51 8.473 0 13.254-3.81 15.736-9.555l-7.687-3.387c-1.21 3.447-3.328 5.261-7.989 5.261Zm-.302-29.692a19.226 19.226 0 0 0-9.321 2.177l4.358 6.168c1.634-.846 3.389-1.27 5.265-1.21 5.084 0 7.687 3.327 8.05 7.68h-8.776v6.048h17.31c.121-.907.181-1.754.181-2.66.061-13.184-8.655-18.203-17.067-18.203ZM291.416 47.83c-5.507 0-9.078-3.326-9.683-8.829h-8.534c.847 9.676 7.202 16.51 18.157 16.51 8.473 0 13.254-3.81 15.736-9.555l-7.687-3.387c-1.21 3.447-3.328 5.261-7.989 5.261Zm-.484-29.692a19.225 19.225 0 0 0-9.32 2.177l4.357 6.168c1.635-.846 3.39-1.27 5.266-1.21 5.084 0 7.686 3.327 8.049 7.68h-8.775v6.048h17.309c.121-.907.182-1.754.182-2.66.06-13.184-8.655-18.203-17.068-18.203ZM117.172.299 133.5 39h9.926L130.971 8.221h16.099V.36L117.172.3Zm48.418.06L146.888 47.71l-2.784 7.076h9.502L176.06.36h-10.47Zm83.461 53.58c3.873 0 7.081-1.089 9.32-2.963l-3.631-5.745c-1.15.484-2.421.665-3.692.665-4.963 0-7.808-2.963-8.776-6.894h-8.897c1.211 8.406 7.263 14.937 15.676 14.937Zm11.196-30.418c-2.057-3.265-6.234-5.624-12.044-5.624-5.689-.06-10.954 3.024-13.738 8.043l7.565 4.838c1.392-2.903 4.116-4.838 8.292-4.838 5.931 0 9.925 4.596 9.925 10.038 0 1.029-.121 2.057-.423 3.024h9.502v-20.5h-9.079v5.019Zm-8.775 38.642c-5.871 0-8.05-2.842-8.474-6.168h-8.654c.181 6.35 4.418 13.304 17.309 13.304 8.715 0 14.404-4.354 16.765-10.885l-8.171-2.842c-1.15 4.233-4.297 6.591-8.775 6.591Z"></path>
     </svg>
-  );
-}
-
-function Badge({ children }: { children: any }) {
-  return (
-    <div className="text-gold-11 py-1 px-2 rounded-full gradient-border font-medium text-xs backdrop-blur-[1px]">
-      {children}
-    </div>
   );
 }
 

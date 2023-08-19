@@ -3,7 +3,7 @@ import React, { CSSProperties, MutableRefObject } from "react";
 import styles from "./styles.module.css";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import card from "../../../public/lux.png";
+import card from "@/public/lux.png";
 
 export default function Card() {
   const ref = React.useRef() as MutableRefObject<HTMLInputElement>;

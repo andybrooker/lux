@@ -1,7 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Badge from "./Badge";
+import { Badge } from "./Badge";
+
 import CTA from "./CTA";
 import InfoHover from "./InfoHover";
 
@@ -16,8 +17,7 @@ export default function Hero() {
       <InfoHover>
         <Badge>Representative 64.0% APR (variable)</Badge>
       </InfoHover>
-
-      <h1 className="tracking-tighter text-5xl md:text-6xl lg:text-7xl 2xl:text-8xl font-[650] hero-gradient text-center w-full bg-gradient p-2 text-transparent text-opacity-0 bg-clip-text">
+      <h1 className="tracking-tighter text-5xl md:text-6xl lg:text-7xl 2xl:text-8xl font-[700] hero-gradient text-center w-full bg-gradient p-2 text-transparent text-opacity-0 bg-clip-text">
         One card to
         <br /> rule them all
       </h1>
@@ -26,9 +26,8 @@ export default function Hero() {
         Luxury rewards, personal wealth advice, <br /> worldwide travel
         insurance and no FX fees.
       </h2>
-      <div className="text-sm">
-        <CTA type="large">Apply Now</CTA>
-      </div>
+
+      <CTA variant="hero">Apply Now</CTA>
     </motion.div>
   );
 }

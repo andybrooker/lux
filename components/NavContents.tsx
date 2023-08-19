@@ -42,7 +42,7 @@ export default function Nav() {
         transition={{ duration: 0.8 }}
         className="flex items-center gap-4"
       >
-        <CTA type="small">Apply Now</CTA>
+        <CTA variant="header">Apply Now</CTA>
         <MenuIcon />
       </motion.div>
     </>

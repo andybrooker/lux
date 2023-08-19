@@ -1,7 +1,5 @@
-import CTA from "./components/CTA";
-import Logo from "./components/Logo";
-import NavContainer from "./components/NavContainer";
-import NavContents from "./components/NavContents";
+import NavContainer from "@/components/NavContainer";
+import NavContents from "@/components/NavContents";
 
 export default function HomepageLayout({
   children,

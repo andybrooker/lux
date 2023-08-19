@@ -1,5 +1,5 @@
 import React from "react";
-import Badge from "../Badge";
+import { Badge } from "../Badge";
 import Slider from "../Slider";
 import Card from "./Card";
 import styles from "./styles.module.css";

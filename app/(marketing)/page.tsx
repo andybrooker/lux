@@ -1,11 +1,10 @@
 import { SVGProps } from "react";
-import CreditCard from "./components/CreditCard";
-import Card from "./components/Card/Card";
+import CreditCard from "@/components/CreditCard";
+import CardGroup from "@/components/Card/CardGroup";
 import OverviewSection from "./sections/Overview";
-import Hero from "./components/Hero";
-import Badge from "./components/Badge";
-import Press from "./components/Press";
-import CardGroup from "./components/Card/CardGroup";
+import Hero from "@/components/Hero";
+import { Badge } from "@/components/Badge";
+import Press from "@/components/Press";
 
 export default function Home() {
   return (
@@ -173,127 +172,3 @@ function Verge() {
     </svg>
   );
 }
-
-const SVGBackgroundPattern = () => {
-  return (
-    <div className="relative w-screen aspect-[1440/1120] -z-10">
-      <div className="absolute top-0 left-0 right-0 -z-10">
-        <SvgComponent />
-      </div>
-      <div className="absolute top-0 left-0 right-0 -z-10">
-        <svg
-          viewBox="0 2 1440 1120"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <mask id="path-1-inside-1_1043_3303" fill="white">
-            <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
-              d="M360 561.987L720 1123L0.000524217 1123L360 561.987ZM1080 561.986L1440 1123L720 1123L1080 561.986ZM1080 561.986L720 0.972656L360 561.987L0 0.972534L1440 0.972647L1080 561.986Z"
-            />
-          </mask>
-          <path
-            d="M0.000524217 1123L-1.68272 1121.92L-3.65923 1125L0.000524556 1125L0.000524217 1123ZM1440 1123L1440 1125L1443.66 1125L1441.68 1121.92L1440 1123ZM720 0.972656L721.683 -0.107475L720 -2.7306L718.317 -0.107475L720 0.972656ZM0 0.972534L1.57313e-07 -1.02747L-3.65975 -1.02747L-1.68325 2.05267L0 0.972534ZM1440 0.972647L1441.68 2.05278L1443.66 -1.02735L1440 -1.02735L1440 0.972647ZM721.683 1121.92L361.683 560.907L358.317 563.067L718.316 1124.08L721.683 1121.92ZM720 1121L0.000523878 1121L0.000524556 1125L720 1125L720 1121ZM1.68377 1124.08L361.683 563.067L358.317 560.907L-1.68272 1121.92L1.68377 1124.08ZM1078.32 563.066L1438.32 1124.08L1441.68 1121.92L1081.68 560.906L1078.32 563.066ZM1440 1121L720 1121L720 1125L1440 1125L1440 1121ZM1078.32 560.906L718.316 1121.92L721.683 1124.08L1081.68 563.066L1078.32 560.906ZM718.317 2.05279L1078.32 563.066L1081.68 560.906L721.683 -0.107475L718.317 2.05279ZM361.683 563.067L721.683 2.05279L718.317 -0.107475L358.317 560.907L361.683 563.067ZM361.683 560.907L1.68325 -0.107597L-1.68325 2.05267L358.317 563.067L361.683 560.907ZM-1.57313e-07 2.97253L1440 2.97265L1440 -1.02735L1.57313e-07 -1.02747L-1.57313e-07 2.97253ZM1438.32 -0.107484L1078.32 560.906L1081.68 563.066L1441.68 2.05278L1438.32 -0.107484Z"
-            fill="url(#paint0_radial_1043_3303)"
-            mask="url(#path-1-inside-1_1043_3303)"
-          />
-          <defs>
-            <radialGradient
-              id="paint0_radial_1043_3303"
-              cx="0"
-              cy="0"
-              r="1"
-              gradientUnits="userSpaceOnUse"
-              gradientTransform="translate(611.735 486.5) rotate(78.2047) scale(530.706 690.766)"
-            >
-              <stop stop-color="#B8A383" />
-              <stop offset="1" stop-color="#FCFCFC" stop-opacity="0.19" />
-            </radialGradient>
-          </defs>
-        </svg>
-      </div>
-    </div>
-  );
-};
-
-const SvgComponent = (props: SVGProps<SVGSVGElement>) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    xmlnsXlink="http://www.w3.org/1999/xlink"
-    viewBox="0 2 1440 1120"
-    {...props}
-  >
-    <defs>
-      <radialGradient
-        id="a"
-        cx={0}
-        cy={0}
-        r={1}
-        gradientUnits="userSpaceOnUse"
-        gradientTransform="rotate(78.205 6.574 619.588) scale(530.706 690.766)"
-      >
-        <stop stopColor="#B8A383" />
-        <stop offset={1} stopColor="#FCFCFC" stopOpacity={0.19} />
-      </radialGradient>
-      <radialGradient
-        id="e"
-        cx={0}
-        cy={0}
-        fx={0}
-        fy={0}
-        r={200}
-        gradientUnits="userSpaceOnUse"
-      >
-        <stop stopColor="#978365" offset={0} />
-        <stop stopColor="#fdfdfc" stopOpacity={0} offset={1} />
-      </radialGradient>
-      <mask id="b" fill="#fff">
-        <path
-          id="c"
-          fillRule="evenodd"
-          clipRule="evenodd"
-          d="M360 561.987 720 1123H0l360-561.013Zm720-.001L1440 1123H720l360-561.014Zm0 0L720 .973 360 561.987 0 .973h1440l-360 561.013Z"
-        />
-      </mask>
-      <mask id="d" maskUnits="userSpaceOnUse">
-        <use
-          style={{
-            fill: "none",
-            stroke: "#fff",
-          }}
-          xlinkHref="#c"
-        >
-          <animate
-            attributeName="stroke-dashoffset"
-            from={250}
-            to={-1664}
-            dur="12s"
-            repeatCount="indefinite"
-          />
-        </use>
-      </mask>
-    </defs>
-    <g
-      style={{
-        mask: "url(#d)",
-      }}
-    >
-      <circle
-        style={{
-          fill: "url(#e)",
-        }}
-        r={200}
-      >
-        <animateMotion
-          keyPoints="0;1"
-          keyTimes="0;1"
-          dur="12s"
-          repeatCount="indefinite"
-        >
-          <mpath xlinkHref="#c" />
-        </animateMotion>
-      </circle>
-    </g>
-  </svg>
-);

@@ -50,6 +50,25 @@ export default function Card() {
     setMousePos({ rx: 10, ry: 10, mx: 50, my: 50 });
   };
 
+  const infiniteAnimation = {
+    "--r-x": [2 + "deg", 2 + "deg", -2 + "deg", -2 + "deg", 2 + "deg"],
+    "--r-y": [-5 + "deg", 5 + "deg", 5 + "deg", -5 + "deg", -5 + "deg"],
+    y: [-5, 5, -5, 5, -5],
+  } as any;
+
+  const mouseAnimation = {
+    "--r-x": mousePos.ry + "deg",
+    "--r-y": -mousePos.rx + "deg",
+  } as any;
+
+  const infiniteTransition = {
+    repeatType: "loop",
+    repeat: Infinity,
+    duration: 6,
+    damping: 10,
+    stiffness: 100,
+  } as any;
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 5, scale: 0.95, filter: "blur(5px)" }}
@@ -62,10 +81,12 @@ export default function Card() {
         ref={ref}
         className={"h-72 md:h-[360px] " + styles.card}
         animate={
-          {
-            "--r-x": mousePos.ry + "deg",
-            "--r-y": -mousePos.rx + "deg",
-          } as any
+          mousePos.mx === 50 && mousePos.my === 50
+            ? infiniteAnimation
+            : mouseAnimation
+        }
+        transition={
+          mousePos.mx === 50 && mousePos.my === 50 ? infiniteTransition : {}
         }
         style={
           {

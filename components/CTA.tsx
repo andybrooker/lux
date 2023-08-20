@@ -15,7 +15,7 @@ export default function CTA({
   }
 
   return (
-    <Button variant="outline" size="default">
+    <Button variant="secondary" size="default">
       {children}
     </Button>
   );

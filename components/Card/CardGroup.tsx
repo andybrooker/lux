@@ -1,5 +1,5 @@
 import React from "react";
-import { Badge } from "../Badge";
+import { Badge } from "../ui/Badge";
 import Slider from "../Slider";
 import Card from "./Card";
 import styles from "./styles.module.css";
@@ -15,7 +15,9 @@ export default function CardGroup() {
           subheading="Choose between 2% cash back on every purchase, or 1 point for every
             £1 spent."
         >
-          Test
+          {Array.prototype.fill(10).map((value) => (
+            <Notification key={value} />
+          ))}
         </Card>
       </div>
       <div className="w-full">
@@ -53,6 +55,18 @@ export default function CardGroup() {
             <div className="absolute self-center h-[1.5px] w-full bg-gradient-to-r from-gold-7/0 via-gold-7 to-gold-7/0"></div>
           </div>
         </Card>
+      </div>
+    </div>
+  );
+}
+
+function Notification() {
+  return (
+    <div className="p-4 flex gap-4 bg-stone-800 border border-stone-300/10 rounded-lg text-sm">
+      <div className="aspect-square h-10 bg-white rounded-full"></div>
+      <div className="text-white">
+        <div className="font-semibold">£13.57 at Sainsburys</div>
+        <div className="text-stone-300">You just earnt 13 points.</div>
       </div>
     </div>
   );

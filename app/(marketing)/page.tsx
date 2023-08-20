@@ -1,9 +1,9 @@
-import { SVGProps } from "react";
+import styles from "./styles.module.css";
 import CreditCard from "@/components/CreditCard";
 import CardGroup from "@/components/Card/CardGroup";
 import OverviewSection from "./sections/Overview";
 import Hero from "@/components/Hero";
-import { Badge } from "@/components/Badge";
+import { Badge } from "@/components/ui/Badge";
 import Press from "@/components/Press";
 
 export default function Home() {
@@ -39,7 +39,7 @@ type FeatureSectionProps = {
 
 function HeroSection() {
   return (
-    <section className="px-8 lg:px-20 xl:px-32 mb-32 h-[96%] w-full">
+    <section className={`px-8 lg:px-20 xl:px-32 mb-32 h-[96%] w-full`}>
       <div className="flex flex-col-reverse md:flex-row justify-center items-center mt-8 md:mt-20">
         <Hero />
         <div className="flex grow-[1] mb-8 md:mb-0">
@@ -73,14 +73,14 @@ function FeatureSection({ badge, copy, children }: FeatureSectionProps) {
 
 function RewardsSection({ badge, copy, children }: FeatureSectionProps) {
   return (
-    <section className="h-[96%] w-full py-8 md:p-8 md:py-24 my-20 bg-gradient-to-br from-grayDark-5 to-black">
-      <div className="flex grow-[2] flex-col gap-4 items-center">
-        <Badge dark>{badge}</Badge>
-        <h2 className="tracking-tight text-2xl min-[480px]:text-3xl sm:text-4xl md:text-5xl font-semibold bg-gradient-to-br from-grayDark-11 via-grayDark-12 to-grayDark-10 text-center w-full p-2 text-transparent text-opacity-0 bg-clip-text">
+    <section className="h-[96%] w-full py-8 md:py-24 my-20 bg-gradient-to-br from-grayDark-5 to-black md:p-8 md:pt-8 px-8 lg:px-20 xl:px-32">
+      <div className="flex grow-[2] flex-col gap-4 items-start">
+        <Badge variant="dark">{badge}</Badge>
+        <h2 className="tracking-tight text-2xl min-[480px]:text-3xl sm:text-4xl md:text-5xl font-semibold bg-gradient-to-br from-grayDark-11 via-grayDark-12 to-grayDark-10 text-left w-full p-2 text-transparent text-opacity-0 bg-clip-text">
           {copy}
         </h2>
       </div>
-      <div className="px-8 lg:px-20 xl:px-32">{children}</div>
+      <div>{children}</div>
     </section>
   );
 }

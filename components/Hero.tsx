@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Badge } from "./Badge";
+import { Badge } from "./ui/Badge";
 
 import CTA from "./CTA";
 import InfoHover from "./InfoHover";

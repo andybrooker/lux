@@ -8,6 +8,63 @@ export default function HomepageLayout({
 }) {
   return (
     <div className="flex min-h-screen flex-col relative">
+      <div className="absolute h-screen w-full flex">
+        <svg
+          viewBox="0 0 1440 725"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g filter="url(#filter0_i_1418_61)">
+            <path
+              d="M510 167.117H934.688M510 167.117V362.5M510 167.117L347.812 5H0M510 557.883H934.688M510 557.883V362.5M510 557.883L347.812 720H0M934.688 557.883V362.5M934.688 557.883L1096.88 720H1440M934.688 167.117V362.5M934.688 167.117L1015.78 86.0583L1096.88 5H1440M934.688 362.5H1440M510 362.5H0"
+              stroke="#FBFBFB"
+              stroke-width="10"
+            />
+          </g>
+          <defs>
+            <filter
+              id="filter0_i_1418_61"
+              x="0"
+              y="0"
+              width="1441"
+              height="726"
+              filterUnits="userSpaceOnUse"
+              color-interpolation-filters="sRGB"
+            >
+              <feFlood flood-opacity="0" result="BackgroundImageFix" />
+              <feBlend
+                mode="normal"
+                in="SourceGraphic"
+                in2="BackgroundImageFix"
+                result="shape"
+              />
+              <feColorMatrix
+                in="SourceAlpha"
+                type="matrix"
+                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                result="hardAlpha"
+              />
+              <feOffset dx="1" dy="1" />
+              <feGaussianBlur stdDeviation="2" />
+              <feComposite
+                in2="hardAlpha"
+                operator="arithmetic"
+                k2="-1"
+                k3="1"
+              />
+              <feColorMatrix
+                type="matrix"
+                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.06 0"
+              />
+              <feBlend
+                mode="normal"
+                in2="shape"
+                result="effect1_innerShadow_1418_61"
+              />
+            </filter>
+          </defs>
+        </svg>
+      </div>
       <NavContainer>
         <NavContents />
       </NavContainer>

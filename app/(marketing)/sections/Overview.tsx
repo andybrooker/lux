@@ -50,54 +50,38 @@ const pictureItem: Variants = {
 
 const copy = [
   {
-    mainCopy: "One simple fee",
-    supportingCopy:
-      "Pay £20/month or £200/year. Cancel anytime. Say goodbye to over-the-limit, foreign exchange and late payment fees.",
-  },
-  {
     mainCopy: "Seamless onboarding",
     supportingCopy:
       "See if you're eligible. Connect your bank account. Confirm your identity. Easy as pie.",
   },
   {
+    mainCopy: "One simple fee",
+    supportingCopy:
+      "Pay £20/month or £200/year. Cancel anytime. Say goodbye to over-the-limit, foreign exchange and late payment fees.",
+  },
+  {
     mainCopy: "Interest, in your interest",
     supportingCopy:
-      "We tell you in real time how much interest you'll end up paying, based on the amount you plan on paying back.",
+      "Real-time interest re-payment calculator, based on the amount you plan on paying back.",
   },
 ];
 
 export default function OverviewSection() {
   return (
-    <motion.div
-      initial="offScreen"
-      whileInView="onScreen"
-      variants={headingContainer}
-      viewport={{ once: true }}
-      className="w-full text-gray-12 flex flex-col justify-center md:p-8 md:pt-16 px-8 lg:px-20 xl:px-32"
-    >
-      <motion.div
-        variants={item}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
-        className="px-0 md:px-6"
-      >
-        <h2 className="tracking-tight text-3xl md:text-4xl text-center mb-2 pb-2 2xl:text-7xl font-semibold bg-gradient-to-r from-gold-9 via-gold-7 to-gold-8 w-full text-transparent text-opacity-0 bg-clip-text">
+    <motion.div className="w-full text-gray-12 flex flex-col justify-center md:p-8 md:pt-8 px-8 lg:px-20 xl:px-32">
+      <motion.div className="px-0 md:px-6">
+        <h2 className="tracking-tight text-3xl md:text-4xl text-left mb-2 pb-2 2xl:text-7xl font-semibold bg-gradient-to-r from-gold-9 via-gold-7 to-gold-8 w-full text-transparent text-opacity-0 bg-clip-text">
           <span>Rewards.</span> <span> Travel.</span>{" "}
-          <span className="whitespace-nowrap">Member Spaces.</span>{" "}
           <span className="whitespace-nowrap">Wealth Management. </span>
           <br />
         </h2>
-        <h3 className="text-center text-2xl font-medium bg-gradient-to-r from-gray-11 via-gray-8 to-gray-10 text-transparent text-opacity-0 bg-clip-text">
+        <h3 className="text-left text-2xl font-medium bg-gradient-to-r from-gray-11 via-gray-8 to-gray-10 text-transparent text-opacity-0 bg-clip-text">
           It&apos;s time to reimagine the credit card experience.
         </h3>
       </motion.div>
-      <motion.div
-        variants={container}
-        viewport={{ once: true }}
-        className="flex flex-col md:flex-row gap-4 my-6"
-      >
+      <motion.div className="flex flex-col md:flex-row gap-4 my-6">
         {copy.map(({ mainCopy, supportingCopy }) => (
-          <motion.div className="flex-1" variants={item} key={mainCopy}>
+          <motion.div className="flex-1" key={mainCopy}>
             <OverviewSectionInfo
               mainCopy={mainCopy}
               supportingCopy={supportingCopy}
